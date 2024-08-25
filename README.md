@@ -140,18 +140,6 @@ The primary stakeholder for this project is the **Marketing Team Electric Bank**
 
 ## Model Choosen: XGBoost Classifier
 
-| Model              | Accuracy | Precision Train | Precision Test | Precision Difference | Recall   | F1 Score | CVR        | ROMI        |
-|--------------------|----------|-----------------|----------------|----------------------|----------|----------|------------|-------------|
-| Gradient Boosting  | 0.913065 | 0.687030        | 0.688612       | 0.001582             | 0.417026 | 0.519463 | 68.861210  | 1396.982825 |
-| Naive Bayes        | 0.856605 | 0.387832        | 0.389520       | 0.001688             | 0.480603 | 0.430294 | 38.951965  | 746.781849  |
-| AdaBoost           | 0.902380 | 0.648958        | 0.615672       | 0.033287             | 0.355603 | 0.450820 | 61.567164  | 1238.416613 |
-| Logistic Regression| 0.895945 | 0.635693        | 0.593668       | 0.042026             | 0.242457 | 0.344300 | 59.366755  | 1190.581622 |
-| KNN                | 0.899102 | 0.745770        | 0.577600       | 0.168170             | 0.389009 | 0.464907 | 57.760000  | 1155.652174 |
-| XGBoost            | 0.906994 | 0.854530        | 0.635906       | 0.218624             | 0.408405 | 0.497375 | 63.590604  | 1282.404435 |
-| Random Forest      | 0.902137 | 0.983690        | 0.596215       | 0.387475             | 0.407328 | 0.483995 | 59.621451  | 1196.118502 |
-| Decision Tree      | 0.878825 | 0.997111        | 0.463542       | 0.533569             | 0.479526 | 0.471398 | 46.354167  | 907.699275  |
-
-
 After evaluating the models' performance and tuning hyperparameter, XGBoost Classifier was chosen over Gradient Boosting and any others model.
 
 **Before and After Hyperparameter Tuning on XGBoost**
@@ -231,7 +219,35 @@ We developed the best model using data cleaning, feature extraction, preprocessi
 
 ## Separate Model for New Customer Acquisition (Model 2)
 
-We also developed a separate model for predicting new customer acquisitions, particularly for cases where customer data is newly available and has not been subjected to any previous campaign. The **Naive Bayes** model, with **SMOTE oversampling**, scored **0.845** and shows potential for increasing conversion rates by **6.61 times** and reducing telemarketing costs by **7.82 times**.
+We also developed a separate model for predicting new customer acquisitions, particularly for cases where customer data is newly available and has not been subjected to any previous campaign. The **Naive Bayes** model, with **SMOTE oversampling**, scored **0.845** and shows potential for increasing conversion rates by **6.61 times** and reducing telemarketing costs by **7.82 times**.  
+
+## Recommendations   
+
+1. **Targeted Campaign**  
+      - Use the predictive model to identify **customers who are most likely to subscribe** to a term deposit and design targeted marketing campaigns to engage these potential customers.  
+      - Based on Global Explanation using SHAP, we found that the longer the duration of the call, the more likely it is that the client will agree to the deposit. We also found spesific month and contact type have significant impact. This global explanation was also supported by the findings in predictive modelling in Local explanation: Counterfactual, where the desired outcomes are highly influenced by those features. 
+
+2. **Spesific Recommendation Samples**  
+      Based on Counterfactual, we found some examples how we can change the non-deposit customers to subscribe the deposit.  
+      - 30-year old single customers who worked as an admin with housing loan via cellular for 40 mins in May  
+      - 36-year old married customers who worked in services with no loan and credit via cellular for around 31 minutes.  
+      - 54-year old married customers who worked in management with personal loan via celullar in July for around 1 hour.    
+      - 31-year old divorced customers who worked as a technician via cellular in Dec for 12 minutes or in March for around 56 minutes.  
+      - 36-year old married customers who worked as blue-collar via cellular on Friday, July for more than 1 hour.
+
+  3. **Customer Database**  
+      To ensure the accuracy and relevance of predictive models, it's crucial to maintain a robust customer database and collect high-quality data. This involves several key practices based on our EDA findings:   
+      - **Maintain Data Integrity**: Establish a reliable system to store and manage customer data. Regularly update the database to prevent data from becoming outdated, and continuously monitor for data drift—a situation where changes in data patterns over time can reduce the accuracy of our model.  
+      - **Ensure Complete and Accurate Data Collection**: Encourage customers to provide complete information, avoiding placeholders like 'Unknown.' Collect comprehensive economic details, such as income, which are vital for accurate analysis and modeling.   
+      - **Capture Important Behavioral Data**: Include additional relevant data points, such as call timestamps, to understand customer behavior over time. This temporal information can improve the model’s predictive power by highlighting trends and patterns.  
+
+  4. **Campaign Regulation**  
+      Define a guidelines based on the model's insights to improve the probability of customers subscriptions. Use these regulations to refine campaign strategies and improve conversion rates. The recommendations are **what's the maximum call should we perform for a customer(in this case 56 max calls - based on our EDA findings), how many days should we call for a month, etc**.   
 
 ## Dashboard
-To explore more about how this dataset looks like, we provide you [Tableau Dashboard](https://public.tableau.com/app/profile/naufal.daffa.abdurahman7328/viz/BankTelemarketingDashboard/Customer?publish=yes)
+To explore more about how this dataset looks like, we provide you [Tableau Dashboard](https://public.tableau.com/app/profile/naufal.daffa.abdurahman7328/viz/BankTelemarketingDashboard/Customer?publish=yes)  
+
+
+**Notes** :  
+1. Our model using spesific library and python files, please make sure all the library installed read properly.
+2. Our first model or main model is XGBoost, while the second model or alternative model is Naive Bayes with different purpose. 
