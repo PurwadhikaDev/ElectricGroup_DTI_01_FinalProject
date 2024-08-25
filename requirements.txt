@@ -1,6 +1,4 @@
-SegmentPerformance
 category_encoders==2.6.3
-custom_preprocessing
 dice_ml
 imblearn==0.12.3
 matplotlib==3.9.2
