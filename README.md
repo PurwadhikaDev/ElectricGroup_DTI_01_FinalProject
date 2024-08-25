@@ -6,9 +6,31 @@ This project focuses on developing a machine learning model to predict whether a
 
 ## **Context**
 
-Electric Bank, a prominent financial institution, has been conducting telemarketing campaigns to encourage customers to subscribe to fixed-term deposits. Despite these efforts, the bank's current conversion rate of **11.27%** lags behind the top performers in the financial industry, who are converting at a rate of 23% ([Ruler Analytics](https://www.ruleranalytics.com/blog/reporting/financial-services-marketing-statistics/#:~:text=Marketers%20in%20the%20financial%20services,at%20a%20rate%20of%2023%25)). This gap highlights the need for Electric Bank to improve its telemarketing strategy to reach the success levels seen by industry leaders.
+### Telemarketing Campaign Overview
+- **Total Customers Contacted**: 41,176
+- **Total Subscriptions Achieved**: 4,640
+- **Cost Call Per Customers**: [25 dollars](https://www.cloudtalk.io/blog/how-much-does-call-center-software-cost/?_gl=1*q3ml5d*_up*MQ..*_ga*OTM4ODM3ODg4LjE3MjM0NDExNjY.*_ga_SMHV632SNF*MTcyMzQ1MTA5NS4yLjAuMTcyMzQ1MTA5NS4wLjAuMA..) -> 23 euros
+- **Minimum Deposit**: [500 euro](https://www.activobank.pt/simple-account)
+- **Total Cost of Calls**: 41,176 customers * 23 euros = 947,048 euros
+- **Total Revenue from Subscriptions**: 4,640 subscriptions * 500 euros = 2,320,000 euros
 
-Electric Bank’s ROMI of **144.92%** indicates that for every euro spent on telemarketing, the bank generates an additional 1.45 euros in profit. However, this figure is below the industry benchmark of 5:1 or 500%, which is considered a good ROMI ([Improvado](https://improvado.io/blog/return-on-marketing-investment)). This suggests that there is substantial room for improvement in the profitability of the bank's marketing efforts, as achieving a higher ROMI is essential for ensuring that marketing investments yield substantial returns.
+### Conversion Rate Calculation
+**Conversion Rate** is a key performance indicator that measures the percentage of customers who take a desired action—in this case, subscribing to a term deposit—out of the total customers contacted. It is a critical metric because it directly reflects the effectiveness of the marketing campaign.
+
+$$
+\text{Conversion Rate} = \left( \frac{\text{Total Subscriptions Achieved}}{\text{Total Customers Contacted}} \right) \times 100 = \left( \frac{4,640}{41,176} \right) \times 100 \approx 11.27\%
+$$
+
+An 11.27% conversion rate, while a solid performance, still lags behind the top performers in the financial industry, who are converting at a rate of 23% ([Ruler Analytics](https://www.ruleranalytics.com/blog/reporting/financial-services-marketing-statistics/#:~:text=Marketers%20in%20the%20financial%20services,at%20a%20rate%20of%2023%25)). This gap highlights the need for Electric Bank to improve its telemarketing strategy to reach the success levels seen by industry leaders. 
+
+### ROMI Calculation
+**Return on Marketing Investment (ROMI)**, also known as marketing ROI, is a metric used to determine how much revenue marketing efforts generate compared to how much was spent on them. ROMI is typically calculated in regard to a specific marketing activity, channel ([Improvado](https://improvado.io/blog/return-on-marketing-investment)). It is a crucial tool for predicting future cash flow, making better decisions on budget allocation, and comparing the marketing efficiency of different activities.
+
+$$
+\text{ROMI} = \left( \frac{\text{Total Revenue} - \text{Total Cost of Calls}}{\text{Total Cost of Calls}} \right) \times 100 = \left( \frac{2,320,000 - 947,048}{947,048} \right) \times 100 \approx 144.92\%
+$$
+
+Electric Bank’s ROMI of 144.92% indicates that for every euro spent on telemarketing, the bank generates an additional 1.45 euros in profit. However, this figure is below the industry benchmark of 5:1 or 500%, which is considered a good ROMI ([Improvado](https://improvado.io/blog/return-on-marketing-investment)). This suggests that there is substantial room for improvement in the profitability of the bank's marketing efforts, as achieving a higher ROMI is essential for ensuring that marketing investments yield substantial returns.
 
 ## **Problem Statement**
 The main challenge is to refine Electric Bank's telemarketing approach to increase the conversion rate and ROMI. The current conversion rate of **11.27%** and a ROMI of **144.92%** indicate potential, but there is significant room for improvement. The objective is to develop a machine learning model that accurately predicts which customers are likely to subscribe to a term deposit, allowing the bank to focus its efforts on high-potential leads, with the ultimate goal of achieving conversion rates similar to top performers and maximizing ROMI.
