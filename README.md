@@ -6,9 +6,9 @@ This project focuses on developing a machine learning model to predict whether a
 
 ## **Context**
 
-Electric Bank, a prominent financial institution, has been conducting telemarketing campaigns to encourage customers to subscribe to fixed-term deposits. Despite these efforts, the bank's current conversion rate of **11.27%** lags behind the top performers in the financial industry, who are converting at a rate of 23% (Ruler Analytics). This gap highlights the need for Electric Bank to improve its telemarketing strategy to reach the success levels seen by industry leaders.
+Electric Bank, a prominent financial institution, has been conducting telemarketing campaigns to encourage customers to subscribe to fixed-term deposits. Despite these efforts, the bank's current conversion rate of **11.27%** lags behind the top performers in the financial industry, who are converting at a rate of 23% ([Ruler Analytics](https://www.ruleranalytics.com/blog/reporting/financial-services-marketing-statistics/#:~:text=Marketers%20in%20the%20financial%20services,at%20a%20rate%20of%2023%25)). This gap highlights the need for Electric Bank to improve its telemarketing strategy to reach the success levels seen by industry leaders.
 
-Electric Bank’s ROMI of **144.92%** indicates that for every euro spent on telemarketing, the bank generates an additional 1.45 euros in profit. However, this figure is below the industry benchmark of 5:1 or 500%, which is considered a good ROMI (Improvado). This suggests that there is substantial room for improvement in the profitability of the bank's marketing efforts, as achieving a higher ROMI is essential for ensuring that marketing investments yield substantial returns.
+Electric Bank’s ROMI of **144.92%** indicates that for every euro spent on telemarketing, the bank generates an additional 1.45 euros in profit. However, this figure is below the industry benchmark of 5:1 or 500%, which is considered a good ROMI ([Improvado](https://improvado.io/blog/return-on-marketing-investment)). This suggests that there is substantial room for improvement in the profitability of the bank's marketing efforts, as achieving a higher ROMI is essential for ensuring that marketing investments yield substantial returns.
 
 ## **Problem Statement**
 The main challenge is to refine Electric Bank's telemarketing approach to increase the conversion rate and ROMI. The current conversion rate of **11.27%** and a ROMI of **144.92%** indicate potential, but there is significant room for improvement. The objective is to develop a machine learning model that accurately predicts which customers are likely to subscribe to a term deposit, allowing the bank to focus its efforts on high-potential leads, with the ultimate goal of achieving conversion rates similar to top performers and maximizing ROMI.
@@ -189,3 +189,6 @@ We developed the best model using data cleaning, feature extraction, preprocessi
 ## Separate Model for New Customer Acquisition
 
 We also developed a separate model for predicting new customer acquisitions, particularly for cases where customer data is newly available and has not been subjected to any previous campaign. The **Naive Bayes** model, with **SMOTE oversampling**, scored **0.845** and shows potential for increasing conversion rates by **6.61 times** and reducing telemarketing costs by **7.82 times**.
+
+## Dashboard
+To explore more about how this dataset looks like, we provide you [Tableau Dashboard](https://public.tableau.com/app/profile/naufal.daffa.abdurahman7328/viz/BankTelemarketingDashboard/Customer?publish=yes)
