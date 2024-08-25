@@ -127,6 +127,7 @@ The primary stakeholder for this project is the **Marketing Team Electric Bank**
 * Removed duplicate records.
 * Deleted features with mostly missing values (e.g., the 999 value in the pdays column).
 * Handled outliers.
+* Checking invalid values
 * Checking label ambiguities.
 * Checking cardinality
 * Regrouped certain features for better analysis.
