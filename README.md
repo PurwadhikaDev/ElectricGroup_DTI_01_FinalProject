@@ -16,14 +16,14 @@ This project focuses on developing a machine learning model to predict whether a
 
 ### Conversion Rate Calculation
 $$
-\text{Conversion Rate} = \left( \frac{\text{Total Subscriptions Achieved}}{\text{Total Customers Contacted}} \right) \times 100 = \left( \frac{4,640}{41,176} \right) \times 100 \approx 11.27\%
+\text{Conversion Rate} = \left( \frac{\text{Total Subscriptions Achieved}}{\text{Total Customers Contacted}} \right) \times 100 = \left( \frac{4,640}{41,176} \right) \times 100 \approx 11.27%\%
 $$
 
 An 11.27% conversion rate, while a solid performance, still lags behind the top performers in the financial industry, who are converting at a rate of 23% ([Ruler Analytics](https://www.ruleranalytics.com/blog/reporting/financial-services-marketing-statistics/#:~:text=Marketers%20in%20the%20financial%20services,at%20a%20rate%20of%2023%25)). This gap highlights the need for Electric Bank to improve its telemarketing strategy to reach the success levels seen by industry leaders. 
 
 ### ROMI Calculation
 $$
-\text{ROMI} = \left( \frac{\text{Total Revenue} - \text{Total Cost of Calls}}{\text{Total Cost of Calls}} \right) \times 100 = \left( \frac{2,320,000 - 947,048}{947,048} \right) \times 100 \approx 144.92\%
+\text{ROMI} = \left( \frac{\text{Total Revenue} - \text{Total Cost of Calls}}{\text{Total Cost of Calls}} \right) \times 100 = \left( \frac{2,320,000 - 947,048}{947,048} \right) \times 100 \approx 144.92%\%
 $$
 
 Electric Bank’s ROMI of 144.92% indicates that for every euro spent on telemarketing, the bank generates an additional 1.45 euros in profit. However, this figure is below the industry benchmark of 5:1 or 500%, which is considered a good ROMI ([Improvado](https://improvado.io/blog/return-on-marketing-investment)). This suggests that there is substantial room for improvement in the profitability of the bank's marketing efforts, as achieving a higher ROMI is essential for ensuring that marketing investments yield substantial returns.
@@ -163,6 +163,11 @@ ________________
 | After | 0.84 | 83.57 | 1716 |
 
 We can see that hyperparameter tuning give a better result from the baseline from 0.6 to 0.8. Precision, Conversion Rate, and ROMI are increased from the previous model performance. From 2 models, Gradient Boosting and XGBoost Classifier, the best model after tuning is XGBoost that could reach 0.84. **So, we choose Tuned XGBoost Classifier for our final model**.
+
+## Model Evaluation
+- Classification Report
+- Learning Curve
+- Reliability Curve
 
 ## Business Simulation  
 
