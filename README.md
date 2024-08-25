@@ -120,7 +120,68 @@ The primary stakeholder for this project is the **Marketing Team Electric Bank**
 * Applied feature transformation, including custom encoding, binary encoding, one-hot encoding, label encoding, and scaling using Robust Scaler.
 
 ## Model Choosen: XGBoost Classifier
-After evaluating the models' performance, XGBoost Classifier was chosen over Gradient Boosting and any others model.
+
+| Model              | Accuracy | Precision Train | Precision Test | Precision Difference | Recall   | F1 Score | CVR        | ROMI        |
+|--------------------|----------|-----------------|----------------|----------------------|----------|----------|------------|-------------|
+| Gradient Boosting  | 0.913065 | 0.687030        | 0.688612       | 0.001582             | 0.417026 | 0.519463 | 68.861210  | 1396.982825 |
+| Naive Bayes        | 0.856605 | 0.387832        | 0.389520       | 0.001688             | 0.480603 | 0.430294 | 38.951965  | 746.781849  |
+| AdaBoost           | 0.902380 | 0.648958        | 0.615672       | 0.033287             | 0.355603 | 0.450820 | 61.567164  | 1238.416613 |
+| Logistic Regression| 0.895945 | 0.635693        | 0.593668       | 0.042026             | 0.242457 | 0.344300 | 59.366755  | 1190.581622 |
+| KNN                | 0.899102 | 0.745770        | 0.577600       | 0.168170             | 0.389009 | 0.464907 | 57.760000  | 1155.652174 |
+| XGBoost            | 0.906994 | 0.854530        | 0.635906       | 0.218624             | 0.408405 | 0.497375 | 63.590604  | 1282.404435 |
+| Random Forest      | 0.902137 | 0.983690        | 0.596215       | 0.387475             | 0.407328 | 0.483995 | 59.621451  | 1196.118502 |
+| Decision Tree      | 0.878825 | 0.997111        | 0.463542       | 0.533569             | 0.479526 | 0.471398 | 46.354167  | 907.699275  |
+
+
+After evaluating the models' performance and tuning hyperparameter, XGBoost Classifier was chosen over Gradient Boosting and any others model.
+
+**Before and After Hyperparameter Tuning on XGBoost**
+________________
+
+|  |  Precision |Convension Rate|ROMI|
+| --- | --- | --- | --- |
+| Before | 0.65 | 63.59 | 1282 |
+| After | 0.84 | 83.57 | 1716 |
+
+We can see that hyperparameter tuning give a better result from the baseline from 0.6 to 0.8. Precision, Conversion Rate, and ROMI are increased from the previous model performance. From 2 models, Gradient Boosting and XGBoost Classifier, the best model after tuning is XGBoost that could reach 0.84. **So, we choose Tuned XGBoost Classifier for our final model**.
+
+## Business Simulation  
+
+**1. Scenario without Modeling**
+
+In this scenario our bank will give campaign to all customers, that is 8,236 unseen data with conversion rate 11.27%. Here is the cost revenue calculation :
+
+Total deposit subscription = 928 customers  
+Conversion Rate = 11.27%
+<br>Total telemarketing cost = 8,236 x EUR 23 = EUR 189,428
+<br>ROMI (Return on Marketing Investment) = 144.92 %
+
+**2. Scenario with Modeling**
+
+After we do modeling, we can calculate the possible revenue and ROMI from 8.236 unseen data based on the confusion matrix.
+
+TP (Predict Deposit, Actual Deposit) : 117
+<br>FP (Predict Deposit, Actual No Deposit) : 23
+<br>FN (Predict No Deposit, Actual Deposit) : 811
+<br>TN (Predict No Deposit, Actual No Deposit) :  7,285
+
+We will give campaign only to customers who are predicted to Deposit (TP and FP) :
+
+Total deposit subscription = 117 of 140 customers   
+Conversion Rate = 117/(117+23) * 100 = 83.57 %
+<br>Total revenue =  117 x EUR 500 = EUR 58,500
+<br>Total telemarketing cost = (117 + 23) x EUR 23 = EUR 3,220
+<br>ROMI (Return on Marketing Investment) = (58,500 - 3,220)/3,220 = 1,716.7%
+
+**3. Comparison:**
+
+* **Without modeling:**  
+  CVR  : 11.27%  
+  ROMI : 144.92%.
+
+* **With modeling**:  
+  CVR  : 83.57 %  
+  ROMI : 1,716.7%
 
 ## Conclusion
 We developed the best model using data cleaning, feature extraction, preprocessing techniques, and model benchmarking which is the XGBoost Classifier. The model achieves a high accuracy of 90% and a precision of 84%, meaning it is effective at correctly predicting deposits, and from the model evaluation using the Learning Curve and Brier Score, the model shows the best performance and is expected to give accurate predictions. In summary, **the model can help Electric Bank improve its Conversion Rate 7.4 times and Return On Marketing Investment (ROMI) 11.84 times from original state by effective targeted telemarketing.**
