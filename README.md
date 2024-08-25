@@ -205,7 +205,7 @@ Conversion Rate = 117/(117+23) * 100 = 83.57 %
 ## Conclusion
 We developed the best model using data cleaning, feature extraction, preprocessing techniques, and model benchmarking which is the XGBoost Classifier. The model achieves a high accuracy of 90% and a precision of 84%, meaning it is effective at correctly predicting deposits, and from the model evaluation using the Learning Curve and Brier Score, the model shows the best performance and is expected to give accurate predictions. In summary, **the model can help Electric Bank improve its Conversion Rate 7.4 times and Return On Marketing Investment (ROMI) 11.84 times from original state by effective targeted telemarketing.**
 
-## Separate Model for New Customer Acquisition
+## Separate Model for New Customer Acquisition (Model 2)
 
 We also developed a separate model for predicting new customer acquisitions, particularly for cases where customer data is newly available and has not been subjected to any previous campaign. The **Naive Bayes** model, with **SMOTE oversampling**, scored **0.845** and shows potential for increasing conversion rates by **6.61 times** and reducing telemarketing costs by **7.82 times**.
 
