@@ -165,9 +165,28 @@ ________________
 We can see that hyperparameter tuning give a better result from the baseline from 0.6 to 0.8. Precision, Conversion Rate, and ROMI are increased from the previous model performance. From 2 models, Gradient Boosting and XGBoost Classifier, the best model after tuning is XGBoost that could reach 0.84. **So, we choose Tuned XGBoost Classifier for our final model**.
 
 ## Model Evaluation
-- Classification Report
-- Learning Curve
-- Reliability Curve
+**Classification Report**
+
+From the confusion matrix, based on our business purpose where we want to have efficient marketing campaign, means high True Positive among all Positive Predicted Label, we got 117 of 140, indicates our model can predict 84% of predictions. 
+
+<img width="430" alt="Screenshot 2024-08-25 at 21 56 23" src="https://github.com/user-attachments/assets/496d9aff-f1c6-46f5-ad01-6fe08a209c3f">
+
+![output](https://github.com/user-attachments/assets/ea39c54a-6ef5-4564-8980-375d19e7e906)
+
+**Learning Curve**
+
+From the learning curve, the model shows stable and similar precision on both training and validation data as the dataset size increases, suggesting that the model is well-generalized and not overfitting.
+
+![Learning Curve XGB](https://github.com/user-attachments/assets/a3fc65b4-ea86-4f3d-8a35-5771b063c1d2)
+
+
+**Reliability Curve**
+
+A lower Brier score indicates better calibration and better prediction accuracy of probabilities, meaning the predicted probabilities are closer to the actual outcomes.
+In our model, Brier score is approximately 0.07, which indicates how well-calibrated the predicted probabilities are. This may be due to the preprocessing steps being done correctly for the train and test data.
+
+![Reliability Curve](https://github.com/user-attachments/assets/1fc3cf02-dcfc-42fe-a839-02e62e1fffc6)
+
 
 ## Business Simulation  
 
